@@ -4,6 +4,19 @@ namespace ConsoleApp1
 {
     public class Program
     {
+
+        // ---- Functions --- //
+
+        static void PrintArray(int[] intArray, string mess)
+        {
+            foreach(int k in intArray)
+            {
+                Console.WriteLine("{0} : {1} ", mess, k);
+            }
+        }
+
+        // ---- End of Functions //
+
         static void Main(string[] args)
         {
             int[] favNums = new int[3];
@@ -30,6 +43,15 @@ namespace ConsoleApp1
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("--------------");
+
+            int[] randNums = { 1, 4, 9, 2 };
+
+            PrintArray(randNums, "ForEach");
+            Console.WriteLine("--------------");
+
+            Array.Sort(randNums);
+            Array.Reverse(randNums);
         }
     }
 }
