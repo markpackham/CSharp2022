@@ -6,10 +6,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Currency (default UK £) : {0:c}", 23.455);
-            Console.WriteLine("Padd with 0s : {0:d4}", 23);
-            Console.WriteLine("3 Decimal Places : {0:f3}", 23.4559999999);
-            Console.WriteLine("Commas : {0:n4}", 23000);
+            string randString = "This is a string";
+            Console.WriteLine("String length :{0}", randString.Length);
+            Console.WriteLine("String Contains is :{0}", randString.Contains("is"));
+            Console.WriteLine("Index of 'is' is :{0}", randString.IndexOf("is"));
+            Console.WriteLine("Remove String: {0}", randString.Remove(10,6));
+            Console.WriteLine("Insert String :{0}", randString.Insert(10,"short "));
+            Console.WriteLine("Replace string :{0}", randString.Replace("string","twine"));
 
         }
     }
