@@ -7,30 +7,19 @@ namespace ConsoleApp1
     public class Program
     {
         // --- Functions --- //
-
+        private static void SayHello()
+        {
+            string name = "";
+            Console.Write("What is your name: ");
+            name = Console.ReadLine();
+            Console.WriteLine("Hello {0}", name);
+        }
 
         // --- End of Functions --- //
 
         static void Main(string[] args)
         {
-            StringBuilder sb = new StringBuilder("Random text");
-            StringBuilder sb2 = new StringBuilder("More stuff that is cool",256);
-            Console.WriteLine("Capacity : {0}", sb2.Capacity);
-            Console.WriteLine("Length : {0}", sb2.Length);
-            sb2.AppendLine("\nMore important text");
-            CultureInfo enUS = CultureInfo.CreateSpecificCulture("en-US");
-            string bestCust = "Jane Smith";
-            sb2.AppendFormat(enUS, "Best Customer : {0}", bestCust);
-            Console.WriteLine(sb2.ToString());
-            sb2.Replace("text", "characters");
-            Console.WriteLine(sb2.ToString());
-            sb2.Clear();
-            sb2.Append("Random text");
-            Console.WriteLine(sb.Equals(sb2));
-            sb2.Insert(11, " that's rad!");
-            Console.WriteLine(sb2.ToString());
-            sb2.Remove(11, 7);
-            Console.WriteLine(sb2.ToString());
+            SayHello();
         }
     }
 }
