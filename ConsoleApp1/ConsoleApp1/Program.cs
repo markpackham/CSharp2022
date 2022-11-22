@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Text;
 
 namespace ConsoleApp1
 {
@@ -6,44 +8,22 @@ namespace ConsoleApp1
     {
         // --- Functions --- //
 
-        static double DoDivision(double x, double y)
-        {
-            if(y == 0)
-            {
-                throw new System.DivideByZeroException();
-            }
-
-            return x / y;
-        }
 
         // --- End of Functions --- //
 
         static void Main(string[] args)
         {
-            double num1 = 5;
-            double num2 = 0;
-
-            try
-            {
-                Console.WriteLine("5 / 0 = {0}", DoDivision(num1,num2));
-            }
-            catch (DivideByZeroException ex)
-            {
-                Console.WriteLine("You must not divide by zero");
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Oh dear something went wrong but I'm clueless");
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }
-
-            finally
-            {
-                Console.WriteLine("A 'finally' will always run, handy for cleanups");
-            }
+            StringBuilder sb = new StringBuilder("Random text");
+            StringBuilder sb2 = new StringBuilder("More stuff that is cool",256);
+            Console.WriteLine("Capacity : {0}", sb2.Capacity);
+            Console.WriteLine("Length : {0}", sb2.Length);
+            sb2.AppendLine("\nMore important text");
+            CultureInfo enUS = CultureInfo.CreateSpecificCulture("en-US");
+            string bestCust = "Jane Smith";
+            sb2.AppendFormat(enUS, "Best Customer : {0}", bestCust);
+            Console.WriteLine(sb2.ToString());
+            sb2.Replace("text", "characters");
+            Console.WriteLine(sb2.ToString());
         }
     }
 }
