@@ -24,6 +24,13 @@ namespace ConsoleApp1
             Console.WriteLine(sb2.ToString());
             sb2.Replace("text", "characters");
             Console.WriteLine(sb2.ToString());
+            sb2.Clear();
+            sb2.Append("Random text");
+            Console.WriteLine(sb.Equals(sb2));
+            sb2.Insert(11, " that's rad!");
+            Console.WriteLine(sb2.ToString());
+            sb2.Remove(11, 7);
+            Console.WriteLine(sb2.ToString());
         }
     }
 }
