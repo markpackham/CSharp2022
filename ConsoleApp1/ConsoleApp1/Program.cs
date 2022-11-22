@@ -4,23 +4,46 @@ namespace ConsoleApp1
 {
     public class Program
     {
+        // --- Functions --- //
 
+        static double DoDivision(double x, double y)
+        {
+            if(y == 0)
+            {
+                throw new System.DivideByZeroException();
+            }
+
+            return x / y;
+        }
+
+        // --- End of Functions --- //
 
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            int secretNumber = rnd.Next(1,6);
-            int numberGuessed = 0;
-            Console.WriteLine("Random Num : ", secretNumber);
+            double num1 = 5;
+            double num2 = 0;
 
-            do
+            try
             {
-                Console.WriteLine("Enter a number between 1 and 5");
-                numberGuessed = Convert.ToInt32(Console.ReadLine());
-            } while (secretNumber != numberGuessed);
+                Console.WriteLine("5 / 0 = {0}", DoDivision(num1,num2));
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("You must not divide by zero");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Oh dear something went wrong but I'm clueless");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
 
-            Console.WriteLine("You guessed it correctly, it was {0}!", numberGuessed);
-
+            finally
+            {
+                Console.WriteLine("A 'finally' will always run, handy for cleanups");
+            }
         }
     }
 }
