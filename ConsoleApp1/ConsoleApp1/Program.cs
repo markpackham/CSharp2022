@@ -7,19 +7,19 @@ namespace ConsoleApp1
     public class Program
     {
         // --- Functions --- //
-        private static void SayHello()
+        
+        static void DoubleIt(int x, out int solution)
         {
-            string name = "";
-            Console.Write("What is your name: ");
-            name = Console.ReadLine();
-            Console.WriteLine("Hello {0}", name);
+            solution = x * 2;
         }
 
         // --- End of Functions --- //
 
         static void Main(string[] args)
         {
-            SayHello();
+            int solution;
+            DoubleIt(15, out solution);
+            Console.WriteLine("15 * 2 = {0}", solution);
         }
     }
 }
