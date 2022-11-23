@@ -8,20 +8,26 @@ namespace ConsoleApp1
     {
         // --- Functions --- //
 
+        static void PaintCar(CarColor cc)
+        {
+            Console.WriteLine("The car was painted {0} the code {1}", cc, (int)cc);
+        }
 
         // --- End of Functions --- //
 
+        enum CarColor : byte
+        {
+            Orange = 1,
+            Blue,
+            Green,
+            Red,
+            Yellow,
+        }
+
         static void Main(string[] args)
         {
-            DateTime awesomeDate = new DateTime(1974, 12, 21);
-            Console.WriteLine("Day of the Week: {0}", awesomeDate.DayOfWeek);
-            awesomeDate = awesomeDate.AddDays(4);
-            awesomeDate = awesomeDate.AddMonths(1);
-            awesomeDate = awesomeDate.AddYears(1);
-            Console.WriteLine("New Date: {0}", awesomeDate.Date);
-            TimeSpan lunchTime = new TimeSpan(12,30,0,0);
-            lunchTime = lunchTime.Subtract(new TimeSpan(0,15,0));
-            Console.WriteLine("New Time: {0}", lunchTime.ToString());
+            CarColor car1 = CarColor.Blue;
+            PaintCar(car1);
         }
     }
 }
