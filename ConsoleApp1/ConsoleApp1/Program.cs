@@ -7,22 +7,16 @@ namespace ConsoleApp1
     public class Program
     {
         // --- Functions --- //
-        static double GetSomeMore(params double[] nums)
+        static void PrintInfo(string name, int zipCode)
         {
-            double sum = 0;
-            foreach (int i in nums)
-            {
-                sum += i;
-            }
-            return sum;
+            Console.WriteLine("{0} {1}", name, zipCode);
         }
-        
 
         // --- End of Functions --- //
 
         static void Main(string[] args)
         {
-            Console.WriteLine("{0}", GetSomeMore(1, 2, 3, 4, 5));
+            PrintInfo(zipCode:123,name:"Jimmy");
         }
     }
 }
