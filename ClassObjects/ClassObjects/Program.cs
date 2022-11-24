@@ -24,6 +24,10 @@ namespace ClassObjects
             };
 
             Console.WriteLine("# of Animals {0}", Animal.GetNumAnimals());
+
+            Console.WriteLine("Area of Rectangle : {0}", ShapeMath.GetArea("rectangle", 5, 6));
+
+            int? randNum = null;
         }
 
         struct Rectangle
