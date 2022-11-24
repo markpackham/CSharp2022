@@ -8,9 +8,7 @@ namespace ClassObjects
 {
     public static class ShapeMath
     {
-        public static double GetArea(string shape = "",
-            double length1 = 0,
-            double length2 = 0)
+        public static double GetArea(string shape = "", double length1 = 0, double length2 = 0)
         {
             if (String.Equals("Rectangle", shape, StringComparison.OrdinalIgnoreCase))
             {
