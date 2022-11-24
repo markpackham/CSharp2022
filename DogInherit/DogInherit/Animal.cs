@@ -20,6 +20,11 @@ namespace DogInherit
             animalIDInfo.Owner = owner;
         }
 
+        public virtual void MakeSound()
+        {
+
+        }
+
         public void GetAnimalIDInfo()
         {
             Console.WriteLine($"{Name} has the ID of {animalIDInfo.IDNum} and is owned by {animalIDInfo.Owner}");
