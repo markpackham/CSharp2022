@@ -16,6 +16,14 @@ namespace ClassObjects
             rect2 = rect1;
             rect1.length = 33;
             Console.WriteLine("Rect2.length {0}", rect2.length);
+
+            Animal fox = new Animal()
+            {
+                name = "Red",
+                sound = "Raaaw!"
+            };
+
+            Console.WriteLine("# of Animals {0}", Animal.GetNumAnimals());
         }
 
         struct Rectangle
