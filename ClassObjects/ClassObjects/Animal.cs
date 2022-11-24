@@ -12,26 +12,34 @@ namespace ClassObjects
         private string sound;
         public static int numOfAnimals = 0;
         public const string SHELTER = "Billy's Home For Animals";
+        public readonly int idNum;
 
-        public Animal()
-        {
-            name = "No Name";
-            sound = "No Sound";
-            numOfAnimals++;
-        }
+        public Animal() : this("No Name", "No Sound") { }
 
-        public Animal(string name = "No Name")
-        {
-            this.name = name;
-            this.sound = "No Sound";
-            numOfAnimals++;
-        }
+        //public Animal(string name = "No Name")
+        //{
+        //    this.name = name;
+        //    this.sound = "No Sound";
+        //    numOfAnimals++;
+        //}
 
-        public Animal(string name = "No Name", string sound = "No Sound")
+        //public Animal(string name = "No Name", string sound = "No Sound")
+        //{
+        //    this.name = name;
+        //    this.sound= sound;
+        //    numOfAnimals++;
+        //}
+
+        public Animal(string name) : this(name, "No Sound") { }
+
+        public Animal(string name, string sound)
         {
-            this.name = name;
-            this.sound= sound;
-            numOfAnimals++;
+            SetName(name);
+            Sound= sound;
+
+            NumOfAnimals = 1;
+            Random rnd = new Random();
+            idNum = rnd.Next(1, 99999);
         }
 
         public void MakeSound()
@@ -67,10 +75,10 @@ namespace ClassObjects
             get { return sound; }
             set
             {
-                if(value.Length> 1)
+                if(value.Length> 1000)
                 {
                     sound = "No Sound";
-                    Console.WriteLine("Sound is too short");
+                    Console.WriteLine("Sound is too long");
                 }
                 else
                 {
@@ -81,7 +89,7 @@ namespace ClassObjects
 
         public string Owner { get; set; } = "No Owner";
 
-        public static int numOfAnimals
+        public static int NumOfAnimals
         {
             get { return numOfAnimals; }
             set { numOfAnimals += value; }
