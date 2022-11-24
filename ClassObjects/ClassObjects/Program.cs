@@ -28,6 +28,15 @@ namespace ClassObjects
             Console.WriteLine("Area of Rectangle : {0}", ShapeMath.GetArea("rectangle", 5, 6));
 
             int? randNum = null;
+            if( randNum == null)
+            {
+                Console.WriteLine("randNum is null");
+            }
+
+            if(!randNum.HasValue)
+            {
+                Console.WriteLine("randNum is null");
+            }
         }
 
         struct Rectangle
