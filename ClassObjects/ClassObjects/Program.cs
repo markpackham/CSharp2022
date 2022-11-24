@@ -13,6 +13,10 @@ namespace ClassObjects
             cat.SetName("Whiskers");
             cat.Sound = "Meow";
             Console.WriteLine("The cat is named {0} and says {1}", cat.GetName(), cat.Sound);
+            cat.Owner = "Jimmy";
+            Console.WriteLine("{0} owner is {1}", cat.GetName(),cat.Owner);
+            Console.WriteLine("{0} shelter id is {1}", cat.GetName(), cat.idNum);
+            Console.WriteLine("# of Animals : {0}",Animal.GetNumAnimals());
 
             //Rectangle rect1;
             //rect1.length = 200;
