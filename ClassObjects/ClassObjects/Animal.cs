@@ -8,9 +8,10 @@ namespace ClassObjects
 {
     class Animal
     {
-        public string name;
-        public string sound;
-        static int numOfAnimals = 0;
+        private string name;
+        private string sound;
+        public static int numOfAnimals = 0;
+        public const string SHELTER = "Billy's Home For Animals";
 
         public Animal()
         {
@@ -59,6 +60,31 @@ namespace ClassObjects
         public string GetName()
         {
             return name;
+        }
+
+        public string Sound
+        {
+            get { return sound; }
+            set
+            {
+                if(value.Length> 1)
+                {
+                    sound = "No Sound";
+                    Console.WriteLine("Sound is too short");
+                }
+                else
+                {
+                    sound = value;
+                }
+            }
+        }
+
+        public string Owner { get; set; } = "No Owner";
+
+        public static int numOfAnimals
+        {
+            get { return numOfAnimals; }
+            set { numOfAnimals += value; }
         }
     }
 }
