@@ -14,6 +14,17 @@ namespace DogInherit
 
         protected AnimalIDInfo animalIDInfo = new AnimalIDInfo();
 
+        public void SetAnimalIDInfo(int idNum, string owner)
+        {
+            animalIDInfo.IDNum = idNum;
+            animalIDInfo.Owner = owner;
+        }
+
+        public void GetAnimalIDInfo()
+        {
+            Console.WriteLine($"{Name} has the ID of {animalIDInfo.IDNum} and is owned by {animalIDInfo.Owner}");
+        }
+
         public virtual void MakeSound()
         {
             Console.WriteLine($"{Name} says {Sound}");
