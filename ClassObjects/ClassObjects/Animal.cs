@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace ClassObjects
 {
-    internal class Animal
+    class Animal
     {
+        public string name;
+        public string sound;
+        static int numOfAnimals = 0;
+
+        public Animal()
+        {
+            name = "No Name";
+            sound = "No Sound";
+            numOfAnimals++;
+        }
+
+        public Animal(string name = "No Name")
+        {
+            this.name = name;
+            this.sound = "No Sound";
+            numOfAnimals++;
+        }
+
+        public Animal(string name = "No Name", string sound = "No Sound")
+        {
+            this.name = name;
+            this.sound= sound;
+            numOfAnimals++;
+        }
     }
 }
