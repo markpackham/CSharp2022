@@ -42,5 +42,23 @@ namespace ClassObjects
         { 
             return numOfAnimals; 
         }
+
+        public void SetName(string name)
+        {
+            if (!name.Any(char.IsDigit))
+            {
+                this.name = name;
+            }
+            else
+            {
+                this.name = "No Name";
+                Console.WriteLine("Name can't contain numbers");
+            }
+        }
+
+        public string GetName()
+        {
+            return name;
+        }
     }
 }
