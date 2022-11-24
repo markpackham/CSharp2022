@@ -32,5 +32,15 @@ namespace ClassObjects
             this.sound= sound;
             numOfAnimals++;
         }
+
+        public void MakeSound()
+        {
+            Console.WriteLine("{0} says {1}", name, sound);
+        }
+
+        public static int GetNumAnimals() 
+        { 
+            return numOfAnimals; 
+        }
     }
 }
