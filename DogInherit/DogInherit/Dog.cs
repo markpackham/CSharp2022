@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DogInherit
 {
-    internal class Dog
+    class Dog : Animal
     {
     }
 }
