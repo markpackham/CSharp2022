@@ -21,5 +21,11 @@ namespace PolymorphShape
         {
             return Math.PI * (Math.Pow(Radius, 2.0));
         }
+
+        public override void GetInfo()
+        {
+            base.GetInfo();
+            Console.WriteLine($"It has a Radius of {Radius}");
+        }
     }
 }
