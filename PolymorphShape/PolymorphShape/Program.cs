@@ -25,3 +25,8 @@ foreach (Shape shape in shapes)
 
     Console.WriteLine("-----");
 }
+
+object circ1 = new Circle(4);
+
+Circle circ2 = (Circle) circ1;
+Console.WriteLine("The {0} Area is {1:f2}", circ2.Name, circ2.Area());
