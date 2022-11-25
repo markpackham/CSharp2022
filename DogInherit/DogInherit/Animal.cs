@@ -8,9 +8,9 @@ namespace DogInherit
 {
     class Animal
     {
-        private string name = "No Name";
+        private string name;
 
-        protected string sound = "No Sound";
+        protected string sound;
 
         protected AnimalIDInfo animalIDInfo = new AnimalIDInfo();
 
@@ -47,7 +47,7 @@ namespace DogInherit
             get { return name; }
             set
             {
-                if (name.Any(char.IsDigit))
+                if (value.Any(char.IsDigit))
                 {
                     name = "No Name";
                 }
