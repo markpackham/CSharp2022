@@ -21,12 +21,13 @@ namespace InterfaceExamples
 
         public void Move()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"The {Brand} moves forward at {Speed} km/h");
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"The {Brand} stops");
+            Speed = 0;
         }
     }
 }
