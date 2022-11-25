@@ -51,10 +51,9 @@ namespace DogInherit
                 {
                     name = "No Name";
                 }
-                else
-                {
-                    name = value;
-                }
+                    
+                name = value;
+                
             }
         }
 
@@ -67,6 +66,7 @@ namespace DogInherit
                 {
                     sound = "No Sound";
                 }
+
                 sound = value;
             }
         }
