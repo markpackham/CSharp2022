@@ -11,4 +11,10 @@ foreach (Shape shape in shapes)
 {
     shape.GetInfo();
     Console.WriteLine("{0} Area : {1:f2}", shape.Name, shape.Area());
+
+    Circle testCirc = shape as Circle;
+    if(testCirc == null)
+    {
+        Console.WriteLine("This is not a Circle");
+    }
 }
