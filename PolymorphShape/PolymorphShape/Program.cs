@@ -17,4 +17,11 @@ foreach (Shape shape in shapes)
     {
         Console.WriteLine("This is not a Circle");
     }
+
+    if(shape is Circle)
+    {
+        Console.WriteLine("This is not a Rectangle");
+    }
+
+    Console.WriteLine("-----");
 }
