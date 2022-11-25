@@ -30,7 +30,24 @@ namespace DogInherit
 
             whiskers.MakeSound();
             grover.MakeSound();
+            whiskers.SetAnimalIDInfo(123, "Jane Jones");
+            whiskers.SetAnimalIDInfo(321, "Bill Jones");
+            whiskers.GetAnimalIDInfo();
+            Animal.AnimalHealth getHealth = new Animal.AnimalHealth();
+            Console.WriteLine("Is my animal healthy : {0}", getHealth.HealthyWeight(11,46));
+            Animal monkey = new Animal()
+            {
+                Name = "Happy",
+                Sound = "Ooook"
+            };
 
+            Animal spot = new Dog()
+            {
+                Name = "Spot",
+                Sound = "Bow Wow",
+                Sound2 = "Arf Arf"
+            };
+            spot.MakeSound();
            
         }
     }
