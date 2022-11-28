@@ -25,5 +25,15 @@ namespace ThorHulkFight
             AttackMax = attackMax;
             BlockMax = blockMax;
         }
+
+        public virtual double Attack()
+        {
+            return rnd.Next(1, (int)AttackMax);
+        }
+
+        public virtual double Block()
+        {
+            return rnd.Next(1, (int)BlockMax);
+        }
     }
 }
