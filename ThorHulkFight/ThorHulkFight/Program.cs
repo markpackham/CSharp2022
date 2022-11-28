@@ -19,6 +19,8 @@ Thor has Died and Hulk is Victorious
 Game Over
 */
 
-// thor = new Warror("Thor",100,26,10);
-// hulk = new Warror("Hulk",100,26,10);
-// Battle.StartFight(thor,hulk);
+Warrior thor = new Warrior("Thor",100,26,10);
+Warrior hulk = new Warrior("Hulk", 200, 26, 10);
+
+Battle.StartFight(thor, hulk);
+
