@@ -8,5 +8,6 @@ namespace ThorHulkFight
 {
     internal interface ITeleports
     {
+        string teleport();
     }
 }
