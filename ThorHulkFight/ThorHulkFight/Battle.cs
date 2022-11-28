@@ -6,12 +6,25 @@ using System.Threading.Tasks;
 
 namespace ThorHulkFight
 {
-    internal class Battlecs
+    internal class Battle
     {
 
         public static void StartFight(Warrior warrior1, Warrior warrior2)
         {
+            while (true)
+            {
+                if (GetAttackResult(warrior1, warrior2) == "Game Over")
+                {
+                    Console.WriteLine("Game Over");
+                    break;
+                }
 
+                if (GetAttackResult(warrior2, warrior1) == "Game Over")
+                {
+                    Console.WriteLine("Game Over");
+                    break;
+                }
+            }
         }
 
         public static string GetAttackResult(Warrior warriorA, Warrior warriorB)
@@ -21,7 +34,7 @@ namespace ThorHulkFight
 
             double dmg2WarriorB = warriorAAttackAmt - warriorBBlockAmt;
 
-            if(dmg2WarriorB> 0)
+            if (dmg2WarriorB> 0)
             {
                 warriorB.Health = warriorB.Health - dmg2WarriorB;
             }
@@ -33,22 +46,17 @@ namespace ThorHulkFight
             Console.WriteLine($"{warriorA.Name} Attacks {warriorB.Name} and Deals {dmg2WarriorB} Damge");
             Console.WriteLine($"{warriorB.Name} Has {warriorB.Health} Health\n");
 
-            double warriorBAttackAmt = warriorB.Attack();
-            double warriorABlockAmt = warriorA.Block();
-
-            double dmg2WarriorA = warriorBAttackAmt - warriorABlockAmt;
-
-            if (dmg2WarriorA > 0)
+            if(warriorB.Health < 1)
             {
-                warriorA.Health = warriorA.Health - dmg2WarriorA;
+                Console.WriteLine($"{warriorB.Name} died {warriorA.Name} won\n");
+
+                return "Game Over";
             }
             else
             {
-                dmg2WarriorA = 0;
+                return "Fight Again";
             }
 
-            Console.WriteLine($"{warriorB.Name} Attacks {warriorA.Name} and Deals {dmg2WarriorA} Damge");
-            Console.WriteLine($"{warriorA.Name} Has {warriorA.Health} Health\n");
 
         }
     }
