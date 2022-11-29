@@ -28,6 +28,14 @@ Animal.GetSum<int>(ref y, ref x);
 string strX = "5", strY = "4";
 Animal.GetSum<string>(ref strX, ref strY);
 
+Rectangle<int> rect1 = new Rectangle<int>(2, 5);
+Console.WriteLine(rect1.GetArea());
+
+Rectangle<long> rect2 = new Rectangle<long>(20, 50);
+Console.WriteLine(rect2.GetArea());
+
+Rectangle<string> rect3 = new Rectangle<string>("2", "3");
+Console.WriteLine(rect3.GetArea());
 
 public struct Rectangle<T>
 {
@@ -44,5 +52,19 @@ public struct Rectangle<T>
     {
         get { return length; }
         set { length = value; }
+    }
+
+    public Rectangle(T width, T length)
+    {
+        this.width = width;
+        this.length = length;
+    }
+
+    public string GetArea()
+    {
+        double dblWidth = Convert.ToDouble(Width);
+        double dblLength = Convert.ToDouble(Length);
+
+        return string.Format($"{Width} * {Length} = {dblWidth * dblLength}");
     }
 }
