@@ -160,4 +160,9 @@ Console.WriteLine($"Contains 1: {stack.Contains(1)}");
 object[] numArray2 = stack.ToArray();
 Console.WriteLine($"{String.Join(",", numArray2)}");
 
+foreach (object o in numArray2)
+{
+    Console.WriteLine($"Stack : {o}");
+}
+
 #endregion
