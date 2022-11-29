@@ -21,3 +21,9 @@ foreach (Animal animal in animalList)
 {
     Console.WriteLine(animal.Name);
 }
+
+int x = 5, y = 4;
+Animal.GetSum<int>(ref y, ref x);
+
+string strX = "5", strY = "4";
+Animal.GetSum<string>(ref strX, ref strY);
