@@ -144,6 +144,15 @@ Console.WriteLine("------------------------");
 Console.WriteLine("Stacks Code");
 Console.WriteLine("------------------------");
 
-// Stack Last in 1st Out Collection (also old school)
+// Stack Last in 1st Out Collection (also old school) like a stack of plates to be washed
+
+Stack stack= new Stack();
+stack.Push(1);
+stack.Push(2);
+stack.Push(3);
+
+Console.WriteLine($"Peek 1: {stack.Peek()}");
+Console.WriteLine($"Pop 1: {stack.Pop()}");
+Console.WriteLine($"Contains 1: {stack.Contains(1)}");
 
 #endregion
