@@ -150,9 +150,14 @@ Stack stack= new Stack();
 stack.Push(1);
 stack.Push(2);
 stack.Push(3);
+stack.Push(4);
+stack.Push(5);
 
 Console.WriteLine($"Peek 1: {stack.Peek()}");
 Console.WriteLine($"Pop 1: {stack.Pop()}");
 Console.WriteLine($"Contains 1: {stack.Contains(1)}");
+
+object[] numArray2 = stack.ToArray();
+Console.WriteLine($"{String.Join(",", numArray2)}");
 
 #endregion
