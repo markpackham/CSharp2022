@@ -22,5 +22,18 @@ arrayList2.Reverse();
 arrayList.Insert(1, "Turkey");
 arrayList2.RemoveAt(0);
 arrayList2.RemoveRange(0, 1);
+Console.WriteLine($"{arrayList.IndexOf("Turkey")}");
+Console.WriteLine($"There is no Turkey in arrayList2 so it's minus one {arrayList2.IndexOf("Turkey")}");
+
+foreach(object item in arrayList)
+{
+    Console.WriteLine(item);
+}
+
+string[] myArray = (string[])arrayList.ToArray(typeof(string));
+
+string[] customers = { "Bob", "Sally", "Sue" };
+ArrayList custArrayList = new ArrayList();
+custArrayList.AddRange(customers);
 
 #endregion
