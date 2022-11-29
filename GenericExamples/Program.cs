@@ -27,3 +27,22 @@ Animal.GetSum<int>(ref y, ref x);
 
 string strX = "5", strY = "4";
 Animal.GetSum<string>(ref strX, ref strY);
+
+
+public struct Rectangle<T>
+{
+    private T width; 
+    private T length;
+
+    public T Width
+    {
+        get { return width; }
+        set { width = value;}
+    }
+
+    public T Length
+    {
+        get { return length; }
+        set { length = value; }
+    }
+}
