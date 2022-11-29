@@ -15,3 +15,9 @@ animalList.Add(new Animal() { Name = "Rover" });
 // use Insert to place at a specific position
 animalList.Insert(1,new Animal() { Name = "Lino" });
 animalList.RemoveAt(1);
+Console.WriteLine(animalList.Count);
+
+foreach (Animal animal in animalList)
+{
+    Console.WriteLine(animal.Name);
+}
