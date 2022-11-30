@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using GenericExamples;
+using static GenericExamples.ArithmaticClass;
 
 List<Animal> animalList = new List<Animal>();
 
@@ -37,6 +38,19 @@ Console.WriteLine(rect2.GetArea());
 Rectangle<string> rect3 = new Rectangle<string>("2", "3");
 Console.WriteLine(rect3.GetArea());
 
+
+Arithmatic add, sub, addSub;
+add = new Arithmatic(Add);
+sub = new Arithmatic(Subtract);
+addSub = add + sub;
+
+Console.WriteLine($"Add {6} & {10}");
+add(6, 10);
+Console.WriteLine($"Add & Subtract {10} & {4}");
+addSub(10, 4);
+
+
+
 public struct Rectangle<T>
 {
     private T width; 
@@ -67,19 +81,7 @@ public struct Rectangle<T>
 
         return string.Format($"{Width} * {Length} = {dblWidth * dblLength}");
     }
-
-    // A delegate is a type that represents references to methods with a particular parameter list and return type.
-    //https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/
-
-    public delegate void Arithmatic(double num1, double num2);
-
-    public static void Add(double num1, double num2)
-    {
-        Console.WriteLine($"{num1} + {num2} = {num1+num2}");
-    }
-
-    public static void Subtract(double num1, double num2)
-    {
-        Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
-    }
 }
+
+
+
