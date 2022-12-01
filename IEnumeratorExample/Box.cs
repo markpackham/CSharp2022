@@ -22,6 +22,7 @@ namespace IEnumeratorExample
         }
 
         // add two boxes together
+        // You can overload operators with +, -, *, /, %, !, ==, !=, >, <, >=, <=, ++ and --
         public static Box operator +(Box box1, Box box2)
         {
             Box box = new Box()
@@ -29,6 +30,17 @@ namespace IEnumeratorExample
                 Length = box1.Length + box2.Length,
                 Width = box1.Width + box2.Width,
                 Breadth = box1.Breadth + box2.Breadth,
+            };
+            return box;
+        }
+
+        public static Box operator -(Box box1, Box box2)
+        {
+            Box box = new Box()
+            {
+                Length = box1.Length - box2.Length,
+                Width = box1.Width - box2.Width,
+                Breadth = box1.Breadth - box2.Breadth,
             };
             return box;
         }
