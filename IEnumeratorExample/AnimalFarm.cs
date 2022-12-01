@@ -24,6 +24,11 @@ namespace IEnumeratorExample
             set { animalList.Insert(index, value); }
         }
 
+        public int Count
+        {
+            get { return animalList.Count; }
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return animalList.GetEnumerator();
