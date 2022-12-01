@@ -75,6 +75,24 @@ namespace IEnumeratorExample
             }
         }
 
+        // customize the string output
+        public override string ToString()
+        {
+            return String.Format("Box with height: {0} Width: {1} and Breadth {2}", Length, Width, Breadth);
+        }
+
+        // convert from a box into another data type eg Box to int
+        public static explicit operator int(Box box)
+        {
+            return (int)(box.Length + box.Width + box.Breadth) / 3;
+        }
+
+        // convert from int into Box
+        public static implicit operator Box(int i)
+        {
+            return new Box(i,i,i);
+        }
+
 
     }
 }
