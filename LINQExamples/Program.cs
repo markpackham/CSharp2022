@@ -19,7 +19,17 @@
             Console.WriteLine($"Get Type: {gt20.GetType()}");
 
             var listGT20 = gt20.ToList<int>();
+            var arrayGT20 = gt20.ToArray();
+
+            nums[0] = 40;
+            foreach (int num in gt20)
+            {
+                Console.WriteLine(num);
+            }
+
+            return arrayGT20;
         }
+
 
         static void Main(string[] args)
         {
@@ -38,6 +48,15 @@
                 Console.WriteLine(dog);
             }
 
+            Console.WriteLine("---------");
+            Console.WriteLine("QueryIntArray");
+            Console.WriteLine("---------");
+
+            int[] intArray = QueryIntArray();
+            foreach (int num in intArray)
+            {
+                Console.WriteLine(num);
+            }
 
         }
     }
