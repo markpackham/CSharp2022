@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IEnumeratorExample
 {
-    internal class AnimalFarm : IEnumerable<int>
+    internal class AnimalFarm : IEnumerable
     {
         private List<Animal> animalList = new List<Animal>();
 
@@ -18,14 +18,16 @@ namespace IEnumeratorExample
 
         public AnimalFarm() { }
 
-        public IEnumerator<int> GetEnumerator()
+        public Animal this[int index]
         {
-            throw new NotImplementedException();
+            get { return (Animal)animalList[index]; }
+            set { animalList.Insert(index, value); }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return animalList.GetEnumerator();
         }
+
     }
 }
