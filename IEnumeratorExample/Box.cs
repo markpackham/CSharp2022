@@ -78,7 +78,7 @@ namespace IEnumeratorExample
         // customize the string output
         public override string ToString()
         {
-            return String.Format("Box with height: {0} Width: {1} and Breadth {2}", Length, Width, Breadth);
+            return String.Format("ToString() Override In The HOUSE!!! Box with height: {0} Width: {1} and Breadth {2}", Length, Width, Breadth);
         }
 
         // convert from a box into another data type eg Box to int
