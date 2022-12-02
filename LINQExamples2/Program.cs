@@ -56,6 +56,7 @@ namespace LINQExamples2
                             orderby animal.Name
                             select animal;
 
+            Console.WriteLine("-------------");
             Console.WriteLine("Animals that weight 12k of less");
             foreach (var animal in smAnimals )
             {
@@ -83,6 +84,7 @@ namespace LINQExamples2
                           orderby dog.Name
                           select dog;
 
+            Console.WriteLine("-------------");
             Console.WriteLine("Heavy Dog(s)");
             foreach (var dog in bigDogs)
             {
@@ -97,12 +99,28 @@ namespace LINQExamples2
                              };
 
             Array arrNameHeight = nameHeight.ToArray();
+            Console.WriteLine("-------------");
             Console.WriteLine("Animal Array Info");
             foreach (var dog in arrNameHeight)
             {
                 Console.WriteLine(dog.ToString());
             }
 
+            var innerJoin = from animal in animals
+                            join owner in owners on animal.AnimalID
+                            equals owner.OwnerID
+                            select new {OwnerName = owner.Name, AnimalName = animal.Name};
+
+            Console.WriteLine("-------------");
+            Console.WriteLine("Animal Array Info Inner Join - Owner & Animal");
+            foreach (var dog in innerJoin)
+            {
+                Console.WriteLine($"{dog.OwnerName} owns {dog.AnimalName}");
+            }
+
+
+            Console.WriteLine("-------------");
+            Console.WriteLine("Group Inner Join");
         }
     }
 }
