@@ -39,7 +39,6 @@ namespace LINQExamples2
             };
 
 
-
             ArrayList famAnimals = new ArrayList()
             {
                 new Animal{Name = "Heidy", Height = 10, Weight = 10},
@@ -84,10 +83,24 @@ namespace LINQExamples2
                           orderby dog.Name
                           select dog;
 
-            Console.WriteLine("Big Dogs");
+            Console.WriteLine("Heavy Dog(s)");
             foreach (var dog in bigDogs)
             {
                 Console.WriteLine("A {0} weighs {1}lbs", dog.Name, dog.Weight);
+            }
+
+
+            var nameHeight = from a in animals
+                             select new
+                             {
+                              a.Name, a.Height 
+                             };
+
+            Array arrNameHeight = nameHeight.ToArray();
+            Console.WriteLine("Animal Array Info");
+            foreach (var dog in arrNameHeight)
+            {
+                Console.WriteLine(dog.ToString());
             }
 
         }
