@@ -6,6 +6,33 @@ namespace LINQExamples2
     {
         static void Main(string[] args)
         {
+
+            Animal[] animals = new[]
+{
+                new Animal{Name = "German Shepherd",
+                Height = 25,
+                Weight = 77,
+                AnimalID = 1},
+                new Animal{Name = "Chihuahua",
+                Height = 7,
+                Weight = 4.4,
+                AnimalID = 2},
+                new Animal{Name = "Saint Bernard",
+                Height = 30,
+                Weight = 200,
+                AnimalID = 3},
+                new Animal{Name = "Pug",
+                Height = 12,
+                Weight = 16,
+                AnimalID = 1},
+                new Animal{Name = "Beagle",
+                Height = 15,
+                Weight = 23,
+                AnimalID = 2}
+            };
+
+
+
             ArrayList famAnimals = new ArrayList()
             {
                 new Animal{Name = "Heidy", Height = 10, Weight = 10},
@@ -28,6 +55,34 @@ namespace LINQExamples2
             {
                 Console.WriteLine($"{animal.Name} weights {animal.Weight}kg");
             }
+
+
+            var animalList = new List<Animal>()
+            {
+                new Animal{Name = "German Shepherd",
+                Height = 25,
+                Weight = 77},
+                new Animal{Name = "Chihuahua",
+                Height = 7,
+                Weight = 4.4},
+                new Animal{Name = "Saint Bernard",
+                Height = 30,
+                Weight = 200}
+            };
+
+            var animalListEnum = animalList.OfType<Animal>();
+
+            var bigDogs = from dog in animalListEnum
+                          where (dog.Weight > 70) && (dog.Height > 25)
+                          orderby dog.Name
+                          select dog;
+
+            Console.WriteLine("Big Dogs");
+            foreach (var dog in bigDogs)
+            {
+                Console.WriteLine("A {0} weighs {1}lbs", dog.Name, dog.Weight);
+            }
+
         }
     }
 }
