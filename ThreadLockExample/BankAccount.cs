@@ -10,12 +10,10 @@ namespace ThreadLockExample
     {
         private Object acctLock = new Object();
         double Balance { get; set; }
-        string Name { get; set; }
 
-        public BankAccount(string name = "No Name", double bal = 1000)
+        public BankAccount(double bal)
         {
             Balance = bal;
-            Name = name;
         }
 
         public double Withdraw(double amt)
