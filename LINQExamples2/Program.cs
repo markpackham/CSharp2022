@@ -118,9 +118,32 @@ namespace LINQExamples2
                 Console.WriteLine($"{dog.OwnerName} owns {dog.AnimalName}");
             }
 
-
             Console.WriteLine("-------------");
             Console.WriteLine("Group Inner Join");
+
+            var groupJoin = from owner in owners
+                            orderby owner.OwnerID
+                            join animal in animals on owner.OwnerID
+                            equals animal.AnimalID into ownerGroup
+                            select new
+                            {
+                                Owner = owner.Name,
+                                Animals = from owner2 in ownerGroup
+                                          orderby owner2.Name
+                                          select owner2
+                            };
+
+            foreach(var ownerGroup in groupJoin)
+            {
+                Console.WriteLine($"{ownerGroup.Owner}");
+                int totalAnimals = 0;
+                foreach (var animal in ownerGroup.Animals)
+                {
+                    totalAnimals++;
+                    Console.WriteLine($"* {animal.Name}");
+                }
+                Console.WriteLine($"totalAnimals: {totalAnimals}");
+            }
         }
     }
 }
