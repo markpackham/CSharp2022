@@ -31,6 +31,13 @@ namespace LINQExamples2
                 AnimalID = 2}
             };
 
+            Owner[] owners = new[]
+            {
+                new Owner{Name = "Doug Parks", OwnerID = 1},
+                new Owner{Name = "Sally Smith", OwnerID = 2},
+                new Owner{Name = "Paul Brooks", OwnerID = 3}
+            };
+
 
 
             ArrayList famAnimals = new ArrayList()
