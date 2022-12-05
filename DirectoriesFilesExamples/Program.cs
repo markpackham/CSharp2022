@@ -30,6 +30,15 @@
                 Console.WriteLine($"Customer : {customer}");
             }
 
+            FileInfo[] txtFiles = dataDir.GetFiles("*.txt", SearchOption.AllDirectories);
+            Console.WriteLine($"Matches: {txtFiles.Length}");
+
+            foreach( FileInfo txtFile in txtFiles)
+            {
+                Console.WriteLine($"{txtFile.Name}");
+                Console.WriteLine($"{txtFile.Length} bytes");
+            }
+
         }
     }
 }
