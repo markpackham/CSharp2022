@@ -16,6 +16,13 @@ namespace FileStreamExample
             fs.Position= 0;
 
             byte[] fileByteArray = new byte[rsByteArray.Length];
+
+            for(int i =0; i<rsByteArray.Length; i++)
+            {
+                fileByteArray[i] = (byte)fs.ReadByte();
+            }
+            Console.WriteLine(Encoding.Default.GetString(fileByteArray));
+            fs.Close();
         }
     }
 }
