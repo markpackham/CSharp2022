@@ -15,7 +15,20 @@
             DirectoryInfo dataDir = new DirectoryInfo(@"E:\Sites\deleteMe");
             dataDir.Create();
             //Directory.Delete(@"E:\Sites\deleteMe");
-            dataDir.Delete();
+            //dataDir.Delete();
+            string[] customers =
+            {
+                "Bob Smith",
+                "Sally Smith",
+                "Sally Smith",
+            };
+            string textFilePath = @"E:\Sites\deleteMe\testfile1.txt";
+            File.WriteAllLines(textFilePath, customers);
+
+            foreach(string customer in File.ReadAllLines(textFilePath))
+            {
+                Console.WriteLine($"Customer : {customer}");
+            }
 
         }
     }
