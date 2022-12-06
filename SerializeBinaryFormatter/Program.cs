@@ -15,6 +15,7 @@ namespace SerializeBinaryFormatter
             formatter.Serialize(stream, bowser);
             stream.Close();
 
+            // delete data by turning it to null
             bowser = null;
 
             stream = File.Open("AnimalData.dat", FileMode.Open);
@@ -22,6 +23,26 @@ namespace SerializeBinaryFormatter
 
             bowser = (Animal)formatter.Deserialize(stream);
             stream.Close();
+
+            Console.WriteLine(bowser.ToString());
+
+            bowser.AnimalID= 11111;
+            bowser.Name = "Bowser von Changed Name III";
+
+            string filePath = @"E:\Sites\bowser.xml";
+            XmlSerializer serializer= new XmlSerializer(typeof(Animal));
+            using (TextWriter tw = new StreamWriter(filePath))
+            {
+                serializer.Serialize(tw, bowser);
+            }
+
+            bowser = null;
+
+            XmlSerializer deserializer = new XmlSerializer(typeof(Animal));
+            TextReader reader = new StreamReader(filePath);
+            object obj = deserializer.Deserialize(reader);
+            bowser = (Animal)obj;
+            reader.Close();
 
             Console.WriteLine(bowser.ToString());
         }
