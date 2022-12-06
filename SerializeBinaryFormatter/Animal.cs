@@ -2,6 +2,8 @@
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
+// code taken from https://github.com/derekbanas/C-Sharp-Course/blob/main/C%23%20Code%2015/Animal.cs
+
 // With serialization you can store the state 
 // of an object in a file stream, pass it to
 // a remote network
