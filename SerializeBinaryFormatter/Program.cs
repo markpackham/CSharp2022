@@ -45,6 +45,35 @@ namespace SerializeBinaryFormatter
             reader.Close();
 
             Console.WriteLine(bowser.ToString());
+
+            string filePathAnimals = @"E:\Sites\animals.xml";
+            List<Animal> theAnimals = new List<Animal>()
+            {
+                new Animal("Horse", 60, 30, 22),
+                new Animal("Mule", 55, 24, 33),
+                new Animal("Donkey", 40, 20, 44)
+            };
+
+            using (Stream fileStream = new FileStream(filePathAnimals, FileMode.Create,
+                FileAccess.Write, FileShare.None))
+            {
+                XmlSerializer serializer2 = new XmlSerializer(typeof(List<Animal>));
+                serializer2.Serialize(fileStream, theAnimals);
+            }
+
+            theAnimals = null;
+
+            XmlSerializer deserializer2 = new XmlSerializer(typeof(List<Animal>));
+
+            using (FileStream fileStream2 = File.OpenRead(filePathAnimals))
+            {
+                theAnimals = (List<Animal>)deserializer2.Deserialize(fileStream2);
+            }
+
+            foreach (Animal animal in theAnimals)
+            {
+                Console.WriteLine(animal.ToString());
+            }
         }
     }
 }
