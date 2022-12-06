@@ -8,7 +8,8 @@ namespace SerializeBinaryFormatter
     {
         static void Main(string[] args)
         {
-            Animal bowser = new Animal("Bowser",40,20);
+            Animal bowser = new Animal("Bowser",400,20,1);
+            // File created here E:\Sites\CSharp2022\SerializeBinaryFormatter\bin\Debug\net6.0
             Stream stream = File.Open("AnimalData.dat", FileMode.Create);
             BinaryFormatter formatter= new BinaryFormatter();
             formatter.Serialize(stream, bowser);

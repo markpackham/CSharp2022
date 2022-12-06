@@ -24,17 +24,19 @@ namespace SerializeBinaryFormatter
 
         public Animal(string name = "No Name",
             double weight = 0,
-            double height = 0)
+            double height = 0,
+            int animalID = 0)
         {
             Name = name;
             Weight = weight;
             Height = height;
+            AnimalID = animalID;
         }
 
         public override string ToString()
         {
-            return string.Format("{0} weighs {1} lbs and is {2} inches tall",
-                Name, Weight, Height);
+            return string.Format("{0} weighs {1} lbs and is {2} inches tall, the ID is: {3}",
+                Name, Weight, Height, AnimalID);
         }
 
         // Serialization function (Stores Object Data in File)
