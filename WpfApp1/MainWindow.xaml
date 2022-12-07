@@ -9,6 +9,16 @@
     <Grid>
         <Label Content="Stores" HorizontalAlignment="Left" Margin="22,23,0,0" VerticalAlignment="Top"/>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,69,650,195"/>
+        <Label Content="Store Inventory" HorizontalAlignment="Left" Margin="248,23,0,0" VerticalAlignment="Top" Width="129"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="230,69,423,195"/>
+        <Label Content="All Products" HorizontalAlignment="Left" Margin="502,23,0,0" VerticalAlignment="Top" Width="76"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="481,69,181,195"/>
+        <Button Content="Add Store" HorizontalAlignment="Left" Margin="15,259,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add Product" HorizontalAlignment="Left" Margin="483,259,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add Store Inventory" HorizontalAlignment="Left" Margin="230,259,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Store" HorizontalAlignment="Left" Margin="15,296,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Product" HorizontalAlignment="Left" Margin="485,296,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Store Inventory" HorizontalAlignment="Left" Margin="234,296,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
