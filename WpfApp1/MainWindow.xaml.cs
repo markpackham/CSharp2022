@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace WpfApp1
 {
@@ -21,10 +23,21 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Holds connection to DB
+        SqlConnection sqlConnection;
+
         public MainWindow()
         {
             InitializeComponent();
             string connectionString = ConfigurationManager.ConnectionStrings["WpfApp1.Properties.Settings.SQLServerExampleConnectionString"].ConnectionString;
+
+            // Init connection
+            sqlConnection = new SqlConnection(connectionString);
+        }
+
+        private void DisplayStores()
+        {
+
         }
     }
 }
