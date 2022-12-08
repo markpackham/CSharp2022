@@ -57,5 +57,40 @@ namespace WpfApp1
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void storeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void AddStoreClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteStoreClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddInventoryClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteInventoryClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddProductClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteProductClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
