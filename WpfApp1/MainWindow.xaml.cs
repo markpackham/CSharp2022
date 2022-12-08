@@ -83,7 +83,32 @@ namespace WpfApp1
 
         private void storeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            DisplayStoreInventory();
+        }
 
+        private void DisplayAllProducts()
+        {
+            try
+            {
+                string query = "SELECT * FROM Product";
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlDataAdapter)
+                {
+                    DataTable productTable = new DataTable();
+                    sqlDataAdapter.Fill(productTable);
+                    productList.DisplayMemberPath = "Brand";
+                    productList.SelectedValuePath = "Id";
+                    productList.ItemsSource = productTable.DefaultView;
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void AddStoreClick(object sender, RoutedEventArgs e)
