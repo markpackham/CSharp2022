@@ -52,9 +52,9 @@ namespace WpfApp1
                     storeList.ItemsSource = storeTable.DefaultView;
                 }
             }
-            catch 
+            catch (Exception ex) 
             { 
-            
+                MessageBox.Show(ex.ToString());
             }
         }
     }
