@@ -8,31 +8,32 @@
         Title="Store Inventory Manager" Height="450" Width="800">
     <Grid>
         <Label Content="Stores" HorizontalAlignment="Left" Margin="25,9,0,0" VerticalAlignment="Top"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="13,41,647,223"/>
+        <ListBox Name="storeList" SelectionChanged="storeList_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="13,41,647,223"/>
         <Label Content="Store Inventory" HorizontalAlignment="Left" Margin="251,9,0,0" VerticalAlignment="Top" Width="129"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="233,41,420,223"/>
+        <ListBox Name="storeInventoryList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="233,41,420,223"/>
         <Label Content="All Products" HorizontalAlignment="Left" Margin="505,9,0,0" VerticalAlignment="Top" Width="76"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="484,41,178,223"/>
-        <Button Content="Add Store" HorizontalAlignment="Left" Margin="18,231,0,0" VerticalAlignment="Top"/>
-        <Button Content="Add Product" HorizontalAlignment="Left" Margin="486,231,0,0" VerticalAlignment="Top"/>
-        <Button Content="Add Store Inventory" HorizontalAlignment="Left" Margin="233,231,0,0" VerticalAlignment="Top"/>
-        <Button Content="Delete Store" HorizontalAlignment="Left" Margin="17,256,0,0" VerticalAlignment="Top"/>
-        <Button Content="Delete Product" HorizontalAlignment="Left" Margin="487,256,0,0" VerticalAlignment="Top"/>
-        <Button Content="Delete Store Inventory" HorizontalAlignment="Left" Margin="236,256,0,0" VerticalAlignment="Top"/>
+        <ListBox Name="productList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="484,41,178,223"/>
+        <Button Content="Add Store" Click="AddStoreClick" HorizontalAlignment="Left" Margin="18,231,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add Product" Click="AddProductClick" HorizontalAlignment="Left" Margin="486,231,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Store" Click="DeleteStoreClick" HorizontalAlignment="Left" Margin="17,256,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add Store Inventory" Click="AddInventoryClick"   HorizontalAlignment="Left" Margin="233,231,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Store" Click="DeleteStoreClick" HorizontalAlignment="Left" Margin="17,256,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Product" Click="DeleteProductClick" HorizontalAlignment="Left" Margin="487,256,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Store Inventory" Click="DeleteInventoryClick" HorizontalAlignment="Left" Margin="236,256,0,0" VerticalAlignment="Top"/>
         <Label Content="Product Maker" HorizontalAlignment="Left" Margin="11,300,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="102,304,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="102,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Product Brand" HorizontalAlignment="Left" Margin="11,323,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="102,327,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="102,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Store Name" HorizontalAlignment="Left" Margin="236,300,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="327,304,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="327,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Street" HorizontalAlignment="Left" Margin="236,323,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="327,327,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="327,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="City" HorizontalAlignment="Left" Margin="236,349,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="327,353,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="327,353,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="State" HorizontalAlignment="Left" Margin="236,372,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="327,376,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="327,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Zip" HorizontalAlignment="Left" Margin="236,395,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="327,399,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="327,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
