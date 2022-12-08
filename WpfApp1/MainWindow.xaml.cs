@@ -68,6 +68,11 @@ namespace WpfApp1
                 using (sqlDataAdapter)
                 {
                     sqlCommand.Parameters.AddWithValue("StoreId",storeList.SelectedValuePath);
+                    DataTable inventoryTable = new DataTable();
+                    sqlDataAdapter.Fill(inventoryTable);
+                    storeInventoryList.DisplayMemberPath = "Brand";
+                    storeInventoryList.SelectedValuePath= "Id";
+                    storeInventoryList.ItemsSource = inventoryTable.DefaultView;
                 }
             }
             catch(Exception ex)
