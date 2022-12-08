@@ -37,7 +37,25 @@ namespace WpfApp1
 
         private void DisplayStores()
         {
+            try
+            {
+                string query = "SELECT * FROM Store";
 
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlDataAdapter)
+                {
+                    DataTable storeTable = new DataTable();
+                    sqlDataAdapter.Fill(storeTable);
+                    storeList.DisplayMemberPath = "Name";
+                    storeList.SelectedValuePath= "Id";
+                    storeList.ItemsSource = storeTable.DefaultView;
+                }
+            }
+            catch 
+            { 
+            
+            }
         }
     }
 }
