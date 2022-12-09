@@ -193,7 +193,7 @@ namespace WpfApp1
             finally
             {
                 sqlConnection.Close();
-                DisplayStores();
+                DisplayStoreInventory();
             }
         }
 
@@ -201,7 +201,11 @@ namespace WpfApp1
         {
             try
             {
-
+                string query = "DELETE FROM StoreInventory WHERE Id = @ProductId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@ProductId", storeList.SelectedValue);
+                sqlCommand.ExecuteScalar();
             }
             catch (Exception ex)
             {
@@ -210,7 +214,7 @@ namespace WpfApp1
             finally
             {
                 sqlConnection.Close();
-                DisplayStores();
+                DisplayStoreInventory();
             }
         }
 
