@@ -35,7 +35,6 @@ namespace WpfApp1
             sqlConnection = new SqlConnection(connectionString);
             DisplayStores();        
             DisplayAllProducts();
-            DisplayStoreInventory();
         }
 
         private void DisplayStores()
@@ -68,17 +67,23 @@ namespace WpfApp1
                 string query = "SELECT * FROM Product p inner join StoreInventory si ON p.Id = si.ProductId WHERE si.StoreId = @StoreId";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+
                 using (sqlDataAdapter)
                 {
-                    sqlCommand.Parameters.AddWithValue("StoreId",storeList.SelectedValuePath);
+                    sqlCommand.Parameters.AddWithValue("@StoreId", storeList.SelectedValue);
+
                     DataTable inventoryTable = new DataTable();
+
                     sqlDataAdapter.Fill(inventoryTable);
                     storeInventoryList.DisplayMemberPath = "Brand";
-                    storeInventoryList.SelectedValuePath= "Id";
+                    storeInventoryList.SelectedValuePath = "Id";
                     storeInventoryList.ItemsSource = inventoryTable.DefaultView;
                 }
+
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
