@@ -148,6 +148,30 @@ namespace WpfApp1
 
         private void DeleteStoreClick(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string query = "DELETE FROM Store WHERE Id = @StoreId";
+
+                // Simple way to execute a query without adapter
+                // Open and close on our own
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+
+                // Pass value for query
+                sqlCommand.Parameters.AddWithValue("@StoreId", storeList.SelectedValue);
+
+                // Execute query
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                DisplayStores();
+            }
 
         }
 
@@ -155,11 +179,16 @@ namespace WpfApp1
         {
             try
             {
-
+                string query = "INSERT INTO StoreInventory VALUES (@StoreId, @ProductId)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@StoreId", storeList.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@ProductId", productList.SelectedValue);
+                sqlCommand.ExecuteScalar();
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -170,18 +199,13 @@ namespace WpfApp1
 
         private void DeleteInventoryClick(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void AddProductClick(object sender, RoutedEventArgs e)
-        {
             try
             {
 
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -190,9 +214,57 @@ namespace WpfApp1
             }
         }
 
+        private void AddProductClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@Maker",SqlDbType.VarChar){Value=productMakerTextBox.Text},
+                new SqlParameter("@Brand",SqlDbType.VarChar){Value=productBrandTextBox.Text},
+            };
+                string query = "INSERT INTO Product VALUES (@Maker, @Brand)";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddRange(parameters.ToArray());
+                DataTable productTable = new DataTable();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand)) adapter.Fill(productTable);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                DisplayAllProducts();
+            }
+        }
+
         private void DeleteProductClick(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string query = "DELETE FROM Product WHERE Id = @ProductId";
 
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+
+                sqlCommand.Parameters.AddWithValue("@ProductId", productList.SelectedValue);
+
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                DisplayAllProducts();
+            }
         }
     }
 }
