@@ -115,7 +115,9 @@ namespace WpfApp1
 
         private void AddStoreClick(object sender, RoutedEventArgs e)
         {
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@Name",SqlDbType.VarChar){Value=storeNameTextBox.Text},
                 new SqlParameter("@Street",SqlDbType.VarChar){Value=streetTextBox.Text},
@@ -123,6 +125,24 @@ namespace WpfApp1
                 new SqlParameter("@State",SqlDbType.NChar){Value=stateTextBox.Text},
                 new SqlParameter("@Zip",SqlDbType.Int){Value=zipTextBox.Text},
             };
+                string query = "INSERT INTO Store VALUES (@Name, @Street, @City, @State, @Zip)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddRange(parameters.ToArray());
+                DataTable storeTable = new DataTable();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand)) adapter.Fill(storeTable);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                DisplayStores();
+            }
+
         }
 
         private void DeleteStoreClick(object sender, RoutedEventArgs e)
