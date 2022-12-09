@@ -115,7 +115,14 @@ namespace WpfApp1
 
         private void AddStoreClick(object sender, RoutedEventArgs e)
         {
-            List<SqlParameter> parameters = new List<SqlParameter>();
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@Name",SqlDbType.VarChar){Value=storeNameTextBox.Text},
+                new SqlParameter("@Street",SqlDbType.VarChar){Value=streetTextBox.Text},
+                new SqlParameter("@City",SqlDbType.VarChar){Value=cityTextBox.Text},
+                new SqlParameter("@State",SqlDbType.NChar){Value=stateTextBox.Text},
+                new SqlParameter("@Zip",SqlDbType.Int){Value=zipTextBox.Text},
+            };
         }
 
         private void DeleteStoreClick(object sender, RoutedEventArgs e)

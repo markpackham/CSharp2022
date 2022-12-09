@@ -35,8 +35,8 @@
         <TextBox Name="cityTextBox" HorizontalAlignment="Left" Margin="356,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Label Content="State" HorizontalAlignment="Left" Margin="265,339,0,0" VerticalAlignment="Top"/>
         <TextBox Name="stateTextBox" HorizontalAlignment="Left" Margin="356,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label Name="zipTextBox" Content="Zip" HorizontalAlignment="Left" Margin="265,362,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="356,366,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="Zip" HorizontalAlignment="Left" Margin="265,362,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="zipTextBox" HorizontalAlignment="Left" Margin="356,366,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
