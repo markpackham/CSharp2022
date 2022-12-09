@@ -33,8 +33,9 @@ namespace WpfApp1
 
             // Init connection
             sqlConnection = new SqlConnection(connectionString);
-            DisplayStores();
+            DisplayStores();        
             DisplayAllProducts();
+            DisplayStoreInventory();
         }
 
         private void DisplayStores()
