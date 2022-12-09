@@ -115,7 +115,7 @@ namespace WpfApp1
 
         private void AddStoreClick(object sender, RoutedEventArgs e)
         {
-
+            List<SqlParameter> parameters = new List<SqlParameter>();
         }
 
         private void DeleteStoreClick(object sender, RoutedEventArgs e)
