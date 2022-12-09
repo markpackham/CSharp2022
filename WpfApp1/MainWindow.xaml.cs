@@ -201,10 +201,10 @@ namespace WpfApp1
         {
             try
             {
-                string query = "DELETE FROM StoreInventory WHERE Id = @ProductId";
+                string query = "DELETE FROM StoreInventory WHERE ProductId = @ProductId";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlConnection.Open();
-                sqlCommand.Parameters.AddWithValue("@ProductId", storeList.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@ProductId", storeInventoryList.SelectedValue);
                 sqlCommand.ExecuteScalar();
             }
             catch (Exception ex)
