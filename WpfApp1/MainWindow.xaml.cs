@@ -126,6 +126,7 @@ namespace WpfApp1
                 new SqlParameter("@Zip",SqlDbType.Int){Value=zipTextBox.Text},
             };
                 string query = "INSERT INTO Store VALUES (@Name, @Street, @City, @State, @Zip)";
+
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlConnection.Open();
                 sqlCommand.Parameters.AddRange(parameters.ToArray());
@@ -152,7 +153,19 @@ namespace WpfApp1
 
         private void AddInventoryClick(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+                DisplayStores();
+            }
         }
 
         private void DeleteInventoryClick(object sender, RoutedEventArgs e)
@@ -162,7 +175,19 @@ namespace WpfApp1
 
         private void AddProductClick(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+                DisplayStores();
+            }
         }
 
         private void DeleteProductClick(object sender, RoutedEventArgs e)

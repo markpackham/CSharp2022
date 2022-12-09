@@ -23,20 +23,20 @@
         <Button Content="Delete Store" Click="DeleteStoreClick" HorizontalAlignment="Left" Margin="18,236,0,0" VerticalAlignment="Top"/>
         <Button Content="Delete Product" Click="DeleteProductClick" HorizontalAlignment="Left" Margin="110,236,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Button Content="Delete Store Inventory" Click="DeleteInventoryClick" HorizontalAlignment="Left" Margin="230,231,0,0" VerticalAlignment="Top"/>
-        <Label Content="Product Maker" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="productMakerTextBox" HorizontalAlignment="Left" Margin="102,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Product Brand" HorizontalAlignment="Left" Margin="11,312,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="productBrandTextBox" HorizontalAlignment="Left" Margin="102,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Store Name" HorizontalAlignment="Left" Margin="265,267,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="storeNameTextBox" HorizontalAlignment="Left" Margin="356,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label Content="Street" HorizontalAlignment="Left" Margin="265,290,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="streetTextBox" HorizontalAlignment="Left" Margin="356,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label Content="City" HorizontalAlignment="Left" Margin="265,316,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="cityTextBox" HorizontalAlignment="Left" Margin="356,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label Content="State" HorizontalAlignment="Left" Margin="265,339,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="stateTextBox" HorizontalAlignment="Left" Margin="356,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label Content="Zip" HorizontalAlignment="Left" Margin="265,362,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="zipTextBox" HorizontalAlignment="Left" Margin="356,366,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="Product Maker" HorizontalAlignment="Left" Margin="74,275,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Name="productMakerTextBox" HorizontalAlignment="Left" Margin="166,280,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Product Brand" HorizontalAlignment="Left" Margin="75,307,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Name="productBrandTextBox" HorizontalAlignment="Left" Margin="166,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Store Name" HorizontalAlignment="Left" Margin="27,280,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="storeNameTextBox" HorizontalAlignment="Left" Margin="118,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Street" HorizontalAlignment="Left" Margin="27,303,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="streetTextBox" HorizontalAlignment="Left" Margin="118,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="City" HorizontalAlignment="Left" Margin="27,329,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="cityTextBox" HorizontalAlignment="Left" Margin="118,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="State" HorizontalAlignment="Left" Margin="27,352,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="stateTextBox" HorizontalAlignment="Left" Margin="118,356,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Zip (2 numbers)" HorizontalAlignment="Left" Margin="27,375,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="zipTextBox" HorizontalAlignment="Left" Margin="118,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
